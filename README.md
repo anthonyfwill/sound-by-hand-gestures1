@@ -56,6 +56,19 @@ A **confusion matrix** is a table that is often used to evaluate the performance
 > Exploring techniques such as adjusting class weights, tuning hyperparameters, or using different algorithms to improve the model's performance, especially for challenging classes.
 > Experiment with various fractions for regularization
 
+# Errors 
+Three Fingers              |  Four Fingers
+:-------------------------:|:-------------------------:
+<img src="imgs/Three Fingers.png" height="300px" width="400px"><br><be> |  <img src="imgs/Four Fingers.png" height="300px" width="400px"><br><be>
+
+**Feature Design**
+The features used to train the model may not capture the nuances that differentiate classes 5 and 6, despite regularization.
+
+**Model**
+The model architecture may not be sufficiently complex to learn the intricate patterns that differentiate between classes 5 and 6. 
+
+**Note:** Recognition of Four Fingers occurred reliably only when positioned in a manner resembling the top of a circle.
+
 # Requirements
 * mediapipe 0.8.1
 * OpenCV 3.4.2 or Later
