@@ -1,9 +1,17 @@
-# hand-gesture-recognition-using-mediapipe
-Estimate hand pose using MediaPipe (Python version).<br> This is a sample 
-program that recognizes hand signs and finger gestures with a simple MLP using the detected key points.
-<br> ❗ _️**This is English Translated version of the [original repo](https://github.com/Kazuhito00/hand-gesture-recognition-using-mediapipe). All Content is translated to english along with comments and notebooks**_ ❗
+<br> ❗ _️**This utilizes Kazuhito Takehashi's hand gesture recognition: [original repo](https://github.com/Kazuhito00/hand-gesture-recognition-using-mediapipe). All Content is translated to english along with comments and notebooks**_ ❗
 <br> 
 ![mqlrf-s6x16](https://user-images.githubusercontent.com/37477845/102222442-c452cd00-3f26-11eb-93ec-c387c98231be.gif)
+
+# hand-gesture-recognition-using-mediapipe
+This sample program recognizes hand signs and finger gestures with a simple MLP using the detected key points. In addition, it builds its model by utilizing a linear stack of layers, which takes the output of a previous layer and uses it as an input for the next in a sequential fashion.
+Input layer: Accounts for 21 features, which also account for sets of 2 for each feature
+Output layer:  Regularization technique, Dropout, to randomly set 20% of inputs to 0. This reduces dependency and promotes redundancy.
+
+# Redundancy
+Redundancy, in this context, means that multiple pathways in the network can contribute to the same or similar features. This can improve the generalization of the model because it becomes less sensitive to the precise configuration of neurons. The model is better equipped to recognize features in various forms or contexts.
+
+# Confusion Matrix
+<img src="https://user-images.githubusercontent.com/37477845/102345850-54ede380-3fe1-11eb-8d04-88e351445898.png" width="80%"><br><be>
 
 This repository contains the following contents.
 * Sample program
@@ -24,41 +32,6 @@ Here's how to run the demo using your webcam.
 ```bash
 python app.py
 ```
-
-The following options can be specified when running the demo.
-* --device<br>Specifying the camera device number (Default：0)
-* --width<br>Width at the time of camera capture (Default：960)
-* --height<br>Height at the time of camera capture (Default：540)
-* --use_static_image_mode<br>Whether to use static_image_mode option for MediaPipe inference (Default：Unspecified)
-* --min_detection_confidence<br>
-Detection confidence threshold (Default：0.5)
-* --min_tracking_confidence<br>
-Tracking confidence threshold (Default：0.5)
-
-# Directory
-<pre>
-│  app.py
-│  keypoint_classification.ipynb
-│  point_history_classification.ipynb
-│  
-├─model
-│  ├─keypoint_classifier
-│  │  │  keypoint.csv
-│  │  │  keypoint_classifier.hdf5
-│  │  │  keypoint_classifier.py
-│  │  │  keypoint_classifier.tflite
-│  │  └─ keypoint_classifier_label.csv
-│  │          
-│  └─point_history_classifier
-│      │  point_history.csv
-│      │  point_history_classifier.hdf5
-│      │  point_history_classifier.py
-│      │  point_history_classifier.tflite
-│      └─ point_history_classifier_label.csv
-│          
-└─utils
-    └─cvfpscalc.py
-</pre>
 ### app.py
 This is a sample program for inference.<br>
 In addition, learning data (key points) for hand sign recognition,<br>
@@ -91,6 +64,8 @@ This is a module for FPS measurement.
 
 # Training
 Hand sign recognition and finger gesture recognition can add and change training data and retrain the model.
+
+The model is trained on a dataset represented by X_train and y_train, which contain input features and corresponding labels, respectively. The training process involves iterating over the entire dataset for a specified number of epochs (in this case, 1000 epochs) and updating the model's weights based on the optimization of a chosen loss function. The training is performed in batches of 128 samples at a time, enhancing computational efficiency and memory usage. 
 
 ### Hand sign recognition training
 #### 1.Learning data collection
