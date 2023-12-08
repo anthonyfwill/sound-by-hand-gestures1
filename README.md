@@ -1,4 +1,4 @@
-<br> ️**This utilizes Kazuhito Takehashi's hand gesture recognition: [original repo](https://github.com/Kazuhito00/hand-gesture-recognition-using-mediapipe). **
+<br> ️*_This utilizes Kazuhito Takehashi's hand gesture recognition: [original repo](https://github.com/Kazuhito00/hand-gesture-recognition-using-mediapipe)._*
 <br> 
 ![mqlrf-s6x16](https://user-images.githubusercontent.com/37477845/102222442-c452cd00-3f26-11eb-93ec-c387c98231be.gif)
 
@@ -43,7 +43,7 @@ A **confusion matrix** is a table that is often used to evaluate the performance
 
 ## Analysis
 **Class-wise Performance:**
-> Classes 0, 1, 2, and 4 have high precision, recall, and F1-score, suggesting good performance.
+> Classes 0, 1, 2, and 4 have high precision, recall, and F1 scores, suggesting good performance.
 > Class 5 has lower precision, recall, and F1-score, indicating potential challenges in predicting this class accurately.
 > Class 6 has lower precision and F1-score, but a higher recall, suggesting the model is better at capturing instances of this class.
 > Though Class 5 and 6 have less support, a plethora of trials were conducted where they presented additional support; however, the same issue occurred. 
@@ -151,11 +151,8 @@ The model using "LSTM" is as follows. <br>Please change "use_lstm = False" to "T
 # Reference
 * [MediaPipe](https://mediapipe.dev/)
 
-# Author
-Kazuhito Takahashi(https://twitter.com/KzhtTkhs)
-
 # Translation and other improvements
 Nikita Kiselov(https://github.com/kinivi)
  
 # License 
-hand-gesture-recognition-using-mediapipe is under [Apache v2 license](LICENSE).
+Hand Gesture Recognition via Mediapipe [Apache v2 license](LICENSE).
