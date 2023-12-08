@@ -61,13 +61,13 @@ Three Fingers              |  Four Fingers
 :-------------------------:|:-------------------------:
 <img src="imgs/Three Fingers.png" height="300px" width="400px"><br><be> |  <img src="imgs/Four Fingers.png" height="300px" width="400px"><br><be>
 
+**Note:** Recognition of Four Fingers occurred reliably only when positioned in a manner resembling the top of a circle.
+
 ## Feature Design
 The features used to train the model may not capture the nuances that differentiate classes 5 and 6, despite regularization.
 
 ## Model
 The model architecture may not be sufficiently complex to learn the intricate patterns that differentiate between classes 5 and 6. 
-
-**Note:** Recognition of Four Fingers occurred reliably only when positioned in a manner resembling the top of a circle.
 
 # Requirements
 * mediapipe 0.8.1
