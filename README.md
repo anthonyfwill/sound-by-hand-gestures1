@@ -1,4 +1,4 @@
-<br> ❗ _️**This utilizes Kazuhito Takehashi's hand gesture recognition: [original repo](https://github.com/Kazuhito00/hand-gesture-recognition-using-mediapipe). All Content is translated to english along with comments and notebooks**_ ❗
+<br> ️**This utilizes Kazuhito Takehashi's hand gesture recognition: [original repo](https://github.com/Kazuhito00/hand-gesture-recognition-using-mediapipe). **
 <br> 
 ![mqlrf-s6x16](https://user-images.githubusercontent.com/37477845/102222442-c452cd00-3f26-11eb-93ec-c387c98231be.gif)
 
@@ -17,7 +17,7 @@ Output layer:  Regularization technique, Dropout, to randomly set 20% of inputs 
 # Redundancy
 Redundancy, in this context, means that multiple pathways in the network can contribute to the same or similar features. This can improve the generalization of the model because it becomes less sensitive to the precise configuration of neurons. The model is better equipped to recognize features in various forms or contexts.
 
-# Datasets
+# Classes
 0. Open
 1. Close
 2. Point
@@ -46,15 +46,15 @@ A **confusion matrix** is a table that is often used to evaluate the performance
 > Classes 0, 1, 2, and 4 have high precision, recall, and F1-score, suggesting good performance.
 > Class 5 has lower precision, recall, and F1-score, indicating potential challenges in predicting this class accurately.
 > Class 6 has lower precision and F1-score, but a higher recall, suggesting the model is better at capturing instances of this class.
+> Though Class 5 and 6 have less support, a plethora of trials were conducted where they presented additional support; however, the same issue occurred. 
 
 **Overall Performance:**
 > The model has an overall accuracy of 93%, which is a good sign.
 > Macro-average and weighted-average metrics provide an overall assessment. They are close, indicating a balanced dataset.
 
 **Recommendations:**
-
-> Depending on the specific goals and requirements of your application, you might want to focus on improving the performance for classes with lower precision, recall, or F1-score.
-> Consider exploring techniques such as adjusting class weights, tuning hyperparameters, or using different algorithms to improve the model's performance, especially for challenging classes.
+> Exploring techniques such as adjusting class weights, tuning hyperparameters, or using different algorithms to improve the model's performance, especially for challenging classes.
+> Experiment with various fractions for regularization
 
 # Requirements
 * mediapipe 0.8.1
