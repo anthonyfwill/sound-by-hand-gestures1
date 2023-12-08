@@ -11,7 +11,7 @@ Output layer:  Regularization technique, Dropout, to randomly set 20% of inputs 
 Redundancy, in this context, means that multiple pathways in the network can contribute to the same or similar features. This can improve the generalization of the model because it becomes less sensitive to the precise configuration of neurons. The model is better equipped to recognize features in various forms or contexts.
 
 # Confusion Matrix
-<img src="https://user-images.githubusercontent.com/37477845/102345850-54ede380-3fe1-11eb-8d04-88e351445898.png" width="80%"><br><be>
+<img src="imgs/confusionMatrix.png" width="80%"><br><be>
 
 This repository contains the following contents.
 * Sample program
