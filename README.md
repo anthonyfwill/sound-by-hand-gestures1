@@ -64,7 +64,7 @@ Three Fingers              |  Four Fingers
 ## Feature Design
 The features used to train the model may not capture the nuances that differentiate classes 5 and 6, despite regularization.
 
-## Model**
+## Model
 The model architecture may not be sufficiently complex to learn the intricate patterns that differentiate between classes 5 and 6. 
 
 **Note:** Recognition of Four Fingers occurred reliably only when positioned in a manner resembling the top of a circle.
