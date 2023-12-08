@@ -2,7 +2,14 @@
 <br> 
 ![mqlrf-s6x16](https://user-images.githubusercontent.com/37477845/102222442-c452cd00-3f26-11eb-93ec-c387c98231be.gif)
 
-# hand-gesture-recognition-using-mediapipe
+This repository contains the following contents.
+* Sample program
+* Hand sign recognition model(TFLite)
+* Finger gesture recognition model(TFLite)
+* Learning data for hand sign recognition and notebook for learning
+* Learning data for finger gesture recognition and notebook for learning
+
+# Hand Gesture/Sign Recognition
 This sample program recognizes hand signs and finger gestures with a simple MLP using the detected key points. In addition, it builds its model by utilizing a linear stack of layers, which takes the output of a previous layer and uses it as an input for the next in a sequential fashion.
 Input layer: Accounts for 21 features, which also account for sets of 2 for each feature
 Output layer:  Regularization technique, Dropout, to randomly set 20% of inputs to 0. This reduces dependency and promotes redundancy.
@@ -10,15 +17,44 @@ Output layer:  Regularization technique, Dropout, to randomly set 20% of inputs 
 # Redundancy
 Redundancy, in this context, means that multiple pathways in the network can contribute to the same or similar features. This can improve the generalization of the model because it becomes less sensitive to the precise configuration of neurons. The model is better equipped to recognize features in various forms or contexts.
 
+# Datasets
+0. Open
+1. Close
+2. Point
+3. Ok
+4. Thumbs Up
+5. Three Fingers
+6. Four Fingers
+   
 # Confusion Matrix
-<img src="imgs/confusionMatrix.png" width="50%"><br><be>
+Confusion Matrix           |  Classification Report
+:-------------------------:|:-------------------------:
+<img src="imgs/confusionMatrix2.png" height="300px" width="400px"><br><be> |  <img src="imgs/confusionMatrix.png" height="300px" width="400px"><br><be>
 
-This repository contains the following contents.
-* Sample program
-* Hand sign recognition model(TFLite)
-* Finger gesture recognition model(TFLite)
-* Learning data for hand sign recognition and notebook for learning
-* Learning data for finger gesture recognition and notebook for learning
+A **confusion matrix** is a table that is often used to evaluate the performance of a classification model on a set of data for which the true values are known. 
+
+**Precision:** The ratio of correctly predicted positive observations to the total predicted positives (TP / (TP + FP)). It measures the accuracy of positive predictions. 
+
+**Recall:** The ratio of correctly predicted positive observations to all observations in the actual class (TP / (TP + FN)). It measures the ability of the model to capture all the relevant cases. 
+
+**F1 Score:** The harmonic mean of precision and recall, providing a balance between the two metrics. 
+
+**Support:** The number of actual occurrences of each class in the specified dataset.
+
+## Analysis
+**Class-wise Performance:**
+> Classes 0, 1, 2, and 4 have high precision, recall, and F1-score, suggesting good performance.
+> Class 5 has lower precision, recall, and F1-score, indicating potential challenges in predicting this class accurately.
+> Class 6 has lower precision and F1-score, but a higher recall, suggesting the model is better at capturing instances of this class.
+
+**Overall Performance:**
+> The model has an overall accuracy of 93%, which is a good sign.
+> Macro-average and weighted-average metrics provide an overall assessment. They are close, indicating a balanced dataset.
+
+**Recommendations:**
+
+> Depending on the specific goals and requirements of your application, you might want to focus on improving the performance for classes with lower precision, recall, or F1-score.
+> Consider exploring techniques such as adjusting class weights, tuning hyperparameters, or using different algorithms to improve the model's performance, especially for challenging classes.
 
 # Requirements
 * mediapipe 0.8.1
